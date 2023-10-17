@@ -4,6 +4,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import MatchQuiz from './pages/MatchQuiz';
@@ -13,23 +15,14 @@ import SignUpLogin from './pages/SignUpLogin';
 function App() {
   return (
     <Router>
-      <div>
-        {/* Navigation, Footer, and other components */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/quiz">
-            <MatchQuiz />
-          </Route>
-          <Route path="/login">
-            <SignUpLogin />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+      <NavBar />
+      <Switch>
+        <Route path="/about" component={About} />
+        <Route path="/quiz" component={MatchQuiz} />
+        <Route path="/login" component={SignUpLogin} />
+        <Route path="/" component={Home} />
+      </Switch>
+      <Footer />
     </Router>
   );
 }
