@@ -13,8 +13,9 @@ app.use(cors());
 // Create connection to MySQL
 const db = mysql.createConnection({
     host     : 'localhost',
+    port: 3306,
     user     : 'root',
-    password : 'your_password',
+    password : '',
     database : 'school_matching'
 });
 
@@ -24,7 +25,7 @@ db.connect((err) => {
 });
 
 // Set up routes (you should separate these into different files under /routes folder)
-app.use('/api/users', require('./routes/users'));
+//app.use('/api/users', require('./routes/users'));
 // ... other routes
 
 app.listen(PORT, () => {
