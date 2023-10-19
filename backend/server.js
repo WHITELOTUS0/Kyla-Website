@@ -19,6 +19,12 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
+app.use(function (err, req, res, next) {
+  res
+    .status(err.status || 500)
+    .send({ message: err.message, stack: err.stack });
+});
+
 app.use('/v1', router);
 
 app.listen(PORT, () => {
