@@ -1,11 +1,12 @@
-const express=require('express')
-const router=express.Router()
-
-
+const express = require('express')
+const router = express.Router()
+const { authorizeRequest } = require('../middleware/middleware')
 const { 
-    register 
-    } = require('../controllers/auth')
+    register,
+    login
+} = require('../controllers/auth')
 
 router.post('/api/register', register);
+router.post('/api/login', login)
 
 module.exports = router;
