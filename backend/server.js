@@ -1,32 +1,25 @@
+require('dotenv').config()
+
 const express = require('express');
 const cors = require('cors');
-const mysql = require('mysql');
-// other imports...
+const bodyParser = require('body-parser')
+const router = require('./routes/auth')
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000
 
-// Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 
-// Create connection to MySQL
-const db = mysql.createConnection({
-    host     : 'localhost',
-    port: 3306,
-    user     : 'root',
-    password : '',
-    database : 'school_matching'
-});
-
-db.connect((err) => {
-    if(err) throw err;
-    console.log('MySQL Connected...');
-});
-
-// Set up routes (you should separate these into different files under /routes folder)
-//app.use('/api/users', require('./routes/users'));
-// ... other routes
+app.use('/v1', router);
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
