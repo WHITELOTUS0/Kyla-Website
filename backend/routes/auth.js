@@ -6,7 +6,14 @@ const {
     login
 } = require('../controllers/auth')
 
+const {
+    storeQuiz,
+    getAllQuizes
+} = require('../controllers/quiz')
+
 router.post('/api/register', register);
 router.post('/api/login', login)
+router.post('/api/quiz', storeQuiz);
+router.get('/api/quiz', getAllQuizes)
 
 module.exports = router;

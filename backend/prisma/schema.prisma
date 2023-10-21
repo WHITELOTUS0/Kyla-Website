@@ -18,4 +18,13 @@ model User {
     lastName  String   @db.VarChar(255)
     password  String   @db.VarChar(255)
     grade     String   @db.VarChar(10)
+    isQuizAttempted Boolean @default(false)
+    attempts  QuizAttempt[]
+}
+
+model QuizAttempt {
+     id        Int  @id @default(autoincrement())
+     user      User @relation(fields: [userId], references: [id])
+     userId    Int
+     attempt   Json
 }
