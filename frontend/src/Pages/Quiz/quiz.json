@@ -1,0 +1,32 @@
+[
+    {
+        "questionText": "What is the capital of France?",
+        "questionId": 1,
+        "answerOptions": [
+            { "answerText": "New York", "isCorrect": false, "answerId": 10 },
+            { "answerText": "London", "isCorrect": false, "answerId": 11 },
+            { "answerText": "Paris", "isCorrect": true, "answerId": 12 },
+            { "answerText": "Dublin", "isCorrect": false, "answerId": 13 }
+        ]
+    },
+    {
+        "questionText": "Who is CEO of Tesla?",
+        "questionId": 2,
+        "answerOptions": [
+            { "answerText": "Jeff Bezos", "isCorrect": false, "answerId": 20 },
+            { "answerText": "Elon Musk", "isCorrect": true, "answerId": 21 },
+            { "answerText": "Bill Gates", "isCorrect": false, "answerId": 22 },
+            { "answerText": "Tony Stark", "isCorrect": false, "answerId": 23 }
+        ]
+    },
+    {
+        "questionText": "The iPhone was created by which company?",
+        "questionId": 3,
+        "answerOptions": [
+            { "answerText": "Apple", "isCorrect": true, "answerId": 30 },
+            { "answerText": "Intel", "isCorrect": false, "answerId": 31 },
+            { "answerText": "Amazon", "isCorrect": false, "answerId": 32 },
+            { "answerText": "Microsoft", "isCorrect": false, "answerId": 33 }
+        ]
+    }
+]
