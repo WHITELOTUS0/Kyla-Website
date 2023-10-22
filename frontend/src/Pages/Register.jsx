@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // import Visibility from '@mui/icons-material/Visibility';
 // import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // import logo2 from "../Components/Images/logo2.jpg";
@@ -13,6 +13,7 @@ const headers ={
 }
 
   export function Register() {
+    const navigate = useNavigate();
     const axiosCall = axiosInstance(headers);
     const [showPassword, setShowPassword] = useState(false);
 
@@ -34,15 +35,20 @@ const headers ={
     };
 
     const handleSubmit = async() =>{
-      // try {
-      //    const response = await axiosCall.post('register',formData)
-      //    console.log('response', response.data)
-      // } catch (error) {
-      //    errorNotification("Server Error")
-      //    console.log('error ', error )
-      // }
-
-      console.log('formData', formData)
+      try {
+         const response = await axiosCall.post('register',formData)
+         console.log('response', response)
+         if(response.data.message === "User exists"){
+             errorNotification(response.data.message)
+             return;
+         }
+         notify(response.data.message)
+         navigate("/login")
+      } catch (error) {
+         errorNotification("Server Error")
+         console.log('error ', error )
+         return;
+      }
     }
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
