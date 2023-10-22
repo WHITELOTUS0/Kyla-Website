@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // import Visibility from '@mui/icons-material/Visibility';
 // import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // import Dialog from "@mui/material/Dialog";
@@ -8,12 +8,25 @@ import { NavLink } from "react-router-dom";
 // import DialogActions from "@mui/material/DialogActions";
 // import Button from "@mui/material/Button";
 import "../css/index.css"
+import { axiosInstance } from "../http/http";
+import { errorNotification, notify } from "../Toasts/Toast";
+
+const headers ={
+  "Content-Type":"application/json",
+  // Authorization: `Bearer ${token}`
+}
 
 export default function Login() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [forgotPasswordOpen, setForgotPasswordOpen] = useState(false);
   const handleForgotPasswordOpen = () => setForgotPasswordOpen(true);
   const handleForgotPasswordClose = () => setForgotPasswordOpen(false);
+  const [formData, setFormData] = useState({
+      email: "",
+      password: "",
+  });
+  const axiosCall = axiosInstance(headers);
 
   const [input,setInput]=useState({
        email:'',
@@ -29,6 +42,37 @@ export default function Login() {
     });
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    console.log('value', value)
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async() =>{
+    try {
+       const response = await axiosCall.post('login',formData)
+       console.log('response', response.data)
+
+       if(response.data.login){
+          /* Store jwt_token in local storage */
+          await notify("Login SuccessFul")
+          localStorage.clear()
+          localStorage.setItem("jwt_token", response.data.jwt_token)
+          localStorage.setItem('login',true)
+          localStorage.setItem('user', JSON.stringify(response.data.user))
+          navigate("/index")
+       }
+       await errorNotification(response.data.message)
+     
+    } catch (error) {
+       errorNotification("Server Error")
+       console.log('error ', error )
+    }
+  }
+
   return (
     <div className="login">
       <div className="top">
@@ -41,20 +85,24 @@ export default function Login() {
             <div className="Logo1">
               <img alt="" src="" />
             </div>
-            <h1>Log in</h1>
+            <h1>Log in {JSON.stringify(input)}</h1>
             <form>
               <div className="Log">
                 <input
                   type="text"
+                  value={formData.value}
                   placeholder="Email Address"
                   name="email"
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="PasswordInputContainer">
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
+                  value = {formData.password}
                   name="password"
+                  onChange={handleInputChange}
                 />
                 <span
                   className={`PasswordVisibilityIcon ${showPassword ? "visible" : ""}`}
@@ -63,15 +111,25 @@ export default function Login() {
                 </span>
               </div>
               <div>
-                <NavLink to="/index">
-                <input
-                type="button"
-                placeholder="Sign in"
-                name="Sign in"
-                value="Log in"
-                className="signUp-button"
-              />
-                </NavLink>
+             
+                {/* <input
+                  type="button"
+                  placeholder="Sign in"
+                  name="Sign in"
+                  value="Log in"
+                  className="signUp-button"
+              /> */}
+              <button
+                 type="button"
+                 placeholder="Sign in"
+                 name="Sign in"
+                 value="Log in"
+                 className="signUp-button"
+                 onClick={handleSubmit}
+              >
+                  Sign In
+              </button>
+            
               </div>
             </form>
             <div className="Remember">

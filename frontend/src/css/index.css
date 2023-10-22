@@ -6,6 +6,7 @@
 body{
     margin: 0px;
     text-align: center;
+    color: #000;
 }
 .All .Sect1 .GroupSavings{
     font-size: 30px;
@@ -262,6 +263,7 @@ p.quote1{
    padding-left: 5px;
    margin-top: 30px;
    width: 50%;
+   color: black;
 }
 .login .top .form-sect input:focus{
     outline: 1px solid #61dafb;
@@ -391,6 +393,7 @@ p.quote1{
     height: 40px;
     border-radius: 5px;
     margin-top: 10px;
+    color: #000;
 }
 .grouped>input:hover,
 .grouped>input:focus{

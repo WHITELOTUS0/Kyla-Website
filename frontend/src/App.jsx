@@ -7,6 +7,9 @@ import { Route, Routes } from "react-router-dom";
 import { Register } from './Pages/Register'
 import Login from './Pages/Login'
 import TopBar from './Pages/Design1/TopBar'
+import ProtectedRoutes from './navigation/ProtectedRoutes'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,11 +19,14 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Register />} />
-        <Route path="/index" element={<TopBar/>} />
+        <Route element={<ProtectedRoutes/>}>
+            <Route path="index" element={<TopBar/>} />
+            <Route path="/quiz" element={<Quiz/>}/>
+        </Route>  
       </Routes>
       {/* <Quiz/> */}
       {/* <Register /> */}
-
+ 
     </>
   )
 }

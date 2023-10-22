@@ -3,10 +3,47 @@ import { NavLink } from "react-router-dom";
 // import Visibility from '@mui/icons-material/Visibility';
 // import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // import logo2 from "../Components/Images/logo2.jpg";
+import { axiosInstance } from "../http/http";
+import { errorNotification, notify } from "../Toasts/Toast";
 import "../css/index.css"
 
+const headers ={
+  "Content-Type":"application/json",
+  // Authorization: `Bearer ${token}`
+}
+
   export function Register() {
+    const axiosCall = axiosInstance(headers);
     const [showPassword, setShowPassword] = useState(false);
+
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+        grade:"",
+        firstName:"",
+        lastName:""
+    });
+
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      console.log('value', value)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: value,
+      }));
+    };
+
+    const handleSubmit = async() =>{
+      // try {
+      //    const response = await axiosCall.post('register',formData)
+      //    console.log('response', response.data)
+      // } catch (error) {
+      //    errorNotification("Server Error")
+      //    console.log('error ', error )
+      // }
+
+      console.log('formData', formData)
+    }
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -22,28 +59,43 @@ import "../css/index.css"
           <img alt="Logo_image" src=""/>
         </div>
         <div className="Sect4">
-          <h1>Create Account</h1>
+          <h1>Create Account  </h1>
           <form>
             <div className="grouped">
               <input
                 type="text"
-                placeholder="username"
-                name="username"
+                placeholder="First Name"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleInputChange}
               />
             </div>
             <div className="grouped">
               <input
                 type="text"
+                placeholder="Last Name"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="grouped">
+              <input
+                type="email"
                 placeholder="Email Address"
                 name="email"
+                value={formData.email}
+                onChange={handleInputChange}
               />
             </div>
             <div className="PasswordInputContainer2">
             <div className="grouped">
               <input 
-              type={showPassword ? "text" : "password"} 
-              placeholder="Password" 
-              name="password" 
+                type={showPassword ? "text" : "password"} 
+                placeholder="Password" 
+                name="password" 
+                value={formData.password}
+                onChange={handleInputChange}
               />
               <span
                   onClick={handleClickShowPassword}
@@ -53,11 +105,17 @@ import "../css/index.css"
                 </span>
             </div>
             <div className="grouped">
-              <input
-                type=""
-                placeholder="grade"
-                name="select Grade"
-              />
+                <select
+                  name="grade"
+                  value={formData.grade}
+                  onChange={handleInputChange}
+                >
+                  <option value="">Select Grade</option>
+                  <option value="Grade 1">Grade 1</option>
+                  <option value="Grade 2">Grade 2</option>
+                  <option value="Grade 3">Grade 3</option>
+                // Add more options as needed
+              </select>
             </div>
             </div>
             <div className="terms">
@@ -74,7 +132,7 @@ import "../css/index.css"
                 name="SignUp"
                 value="Register"
                 className="signUp-button"
-                // onClick={handleSubmit}
+                onClick={handleSubmit}
               />
             </div>
           </form>
