@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 // import Visibility from '@mui/icons-material/Visibility';
 // import VisibilityOff from '@mui/icons-material/VisibilityOff';
-// import logo2 from "../Components/Images/logo2.jpg";
+// import logo2 from "../Images/logo2.jpg";
 import { axiosInstance } from "../http/http";
 import { errorNotification, notify } from "../Toasts/Toast";
 import "../css/index.css"
@@ -110,6 +110,7 @@ const headers ={
                   {/* {showPassword ? <VisibilityOff /> : <Visibility />} */}
                 </span>
             </div>
+            </div>
             <div className="grouped">
                 <select
                   name="grade"
@@ -120,9 +121,8 @@ const headers ={
                   <option value="Grade 1">Grade 1</option>
                   <option value="Grade 2">Grade 2</option>
                   <option value="Grade 3">Grade 3</option>
-                // Add more options as needed
+                {/* // Add more options as needed */}
               </select>
-            </div>
             </div>
             <div className="terms">
               <span className="agree">

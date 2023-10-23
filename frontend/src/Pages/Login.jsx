@@ -85,7 +85,9 @@ export default function Login() {
             <div className="Logo1">
               <img alt="" src="" />
             </div>
-            <h1>Log in {JSON.stringify(input)}</h1>
+            <h1>Log in 
+              {/* {JSON.stringify(input)} */}
+              </h1>
             <form>
               <div className="Log">
                 <input
@@ -112,23 +114,23 @@ export default function Login() {
               </div>
               <div>
              
-                {/* <input
+                 <input
                   type="button"
-                  placeholder="Sign in"
                   name="Sign in"
                   value="Log in"
                   className="signUp-button"
-              /> */}
-              <button
+                   onClick={handleSubmit}
+              /> 
+              {/* <button
                  type="button"
                  placeholder="Sign in"
                  name="Sign in"
                  value="Log in"
                  className="signUp-button"
                  onClick={handleSubmit}
-              >
-                  Sign In
-              </button>
+              > */}
+                  {/* Sign In */}
+              {/* </button> */}
             
               </div>
             </form>

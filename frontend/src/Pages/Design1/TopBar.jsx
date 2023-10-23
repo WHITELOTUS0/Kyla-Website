@@ -18,13 +18,13 @@ function TopBar() {
             <img src='' alt='No image..'/>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
-          {/* <Hamburger /> */}
+          
         </div>
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
             <ul>
-                <li><NavLink to='#'>Home</NavLink></li>
-                <li><NavLink to='#'>About</NavLink></li>
-                <li><NavLink to='#'>Student Match Quiz</NavLink></li>
+                <li><NavLink to='/index'>Home</NavLink></li>
+                <li><NavLink to='/about'>About</NavLink></li>
+                <li><NavLink to='/quiz'>Student Match Quiz</NavLink></li>
                 {/* <li><NavLink to='/register'>Register</NavLink></li>
                 <li><NavLink to='/login'>Log in</NavLink></li> */}
             </ul>
