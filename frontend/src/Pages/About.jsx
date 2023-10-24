@@ -21,8 +21,7 @@ function About() {
                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti hic 
                 perspiciatis eveniet libero, iste ratione quae? Obcaecati deleniti
                 deleniti odio distinctio a in, nulla nobis, magni necessitatibus natus itaque,
-                 voluptatem corrupti.</p>
-               
+                 voluptatem corrupti.</p>  
             </div>
             </div>
             </div>

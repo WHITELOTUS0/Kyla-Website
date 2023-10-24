@@ -1,6 +1,7 @@
 
 import { NavLink} from 'react-router-dom'
 import { useState } from 'react'
+import LogoutIcon from '@mui/icons-material/Logout';
 import '../../App.css'
 
 function TopBar() {
@@ -28,6 +29,9 @@ function TopBar() {
                 {/* <li><NavLink to='/register'>Register</NavLink></li>
                 <li><NavLink to='/login'>Log in</NavLink></li> */}
             </ul>
+        </div>
+        <div className='logOut'>
+        <LogoutIcon/>
         </div>
     </div>
     </nav>
