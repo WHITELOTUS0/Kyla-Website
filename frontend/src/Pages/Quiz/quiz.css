@@ -6,17 +6,28 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-* {
+/* * {
 	font-family: 'Verdana', cursive, sans-serif;
 	color: #ffffff;
+} */
+
+.bar{
+	/* display: none; */
 }
 
-body {
+.quizBody {
 	background-color: #efacac;
 	/* display: flex; */
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+}
+.appBody{
+	display: flex;
+	/* margin: auto; */
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
 }
 
 .app {

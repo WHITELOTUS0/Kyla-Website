@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-// import Visibility from '@mui/icons-material/Visibility';
-// import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // import logo2 from "../Images/logo2.jpg";
 import { axiosInstance } from "../http/http";
 import { errorNotification, notify } from "../Toasts/Toast";
@@ -107,7 +107,7 @@ const headers ={
                   onClick={handleClickShowPassword}
                   className="VisibilityIcon"
                 >
-                  {/* {showPassword ? <VisibilityOff /> : <Visibility />} */}
+                  {showPassword ? <VisibilityOff /> : <VisibilityIcon/>}
                 </span>
             </div>
             </div>

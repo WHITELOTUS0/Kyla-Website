@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-// import Visibility from '@mui/icons-material/Visibility';
-// import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // import Dialog from "@mui/material/Dialog";
 // import DialogTitle from "@mui/material/DialogTitle";
 // import DialogContent from "@mui/material/DialogContent";
@@ -109,7 +109,7 @@ export default function Login() {
                 <span
                   className={`PasswordVisibilityIcon ${showPassword ? "visible" : ""}`}
                 >
-                  {/* {showPassword ? <VisibilityOff /> : <Visibility />} */}
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
                 </span>
               </div>
               <div>

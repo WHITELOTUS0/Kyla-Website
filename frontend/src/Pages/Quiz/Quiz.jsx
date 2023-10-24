@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './quiz.css'
 import questions from './quiz.json'
+import TopBar from '../Design1/TopBar'
 
 export default function Quiz() {
   /* Create State for question index */
@@ -24,7 +25,12 @@ export default function Quiz() {
 
 
 	return (
-		<div className="app">
+    <div className='quizBody'>
+      <div className='bar'>
+      <TopBar/>
+      </div>
+      <div className='appBody'>
+      <div className="app">
 			{quizFinished ? (
 				<div className="score-section">
 					Quiz Submitted
@@ -57,5 +63,7 @@ export default function Quiz() {
 				</>
 			)}
 		</div>
+      </div>
+    </div>
 	)
 }
