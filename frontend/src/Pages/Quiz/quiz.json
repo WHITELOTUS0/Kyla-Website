@@ -1,0 +1,106 @@
+[
+      {
+        "questionID": 1,
+        "questionText": "What are your favorite hobbies or activities?",
+        "answers": [
+          { "answerID": 10, "answerText": "Sports" },
+          { "answerID": 11, "answerText": "Music" },
+          { "answerID": 12, "answerText": "Art and Crafts" },
+          { "answerID": 13, "answerText": "Reading" },
+          { "answerID": 14, "answerText": "Gaming" }
+        ]
+      },
+      {
+        "questionID": 2,
+        "questionText": "Are you an introvert or an extrovert?",
+        "answers": [
+          { "answerID": 20, "answerText": "Introvert" },
+          { "answerID": 21, "answerText": "Extrovert" },
+          { "answerID": 22, "answerText": "Ambivert (in between)" }
+        ]
+      },
+      {
+        "questionID": 3,
+        "questionText": "What types of books, movies, or TV shows do you enjoy?",
+        "answers": [
+          { "answerID": 30, "answerText": "Science Fiction" },
+          { "answerID": 31, "answerText": "Fantasy" },
+          { "answerID": 32, "answerText": "Comedy" },
+          { "answerID": 33, "answerText": "Drama" },
+          { "answerID": 34, "answerText": "Documentary" }
+        ]
+      },
+      {
+        "questionID": 4,
+        "questionText": "Do you have any specific goals or aspirations for the future?",
+        "answers": [
+          { "answerID": 40, "answerText": "Career Success" },
+          { "answerID": 41, "answerText": "Travel" },
+          { "answerID": 42, "answerText": "Academic Achievement" },
+          { "answerID": 43, "answerText": "Creativity" }
+        ]
+      },
+      {
+        "questionID": 5,
+        "questionText": "What subjects or classes do you excel in or enjoy the most?",
+        "answers": [
+          { "answerID": 50, "answerText": "Math" },
+          { "answerID": 51, "answerText": "Science" },
+          { "answerID": 52, "answerText": "Literature" },
+          { "answerID": 53, "answerText": "History" },
+          { "answerID": 54, "answerText": "Arts" }
+        ]
+      },
+      {
+        "questionID": 6,
+        "questionText": "How do you like to spend your free time on weekends?",
+        "answers": [
+          { "answerID": 60, "answerText": "Exploring Nature" },
+          { "answerID": 61, "answerText": "Playing Video Games" },
+          { "answerID": 62, "answerText": "Watching Movies" },
+          { "answerID": 63, "answerText": "Hanging Out with Friends" }
+        ]
+      },
+      {
+        "questionID": 7,
+        "questionText": "Are there any specific causes or issues you're passionate about?",
+        "answers": [
+          { "answerID": 70, "answerText": "Environmental Conservation" },
+          { "answerID": 71, "answerText": "Social Justice" },
+          { "answerID": 72, "answerText": "Animal Rights" },
+          { "answerID": 73, "answerText": "Education" }
+        ]
+      },
+      {
+        "questionID": 8,
+        "questionText": "What's your preferred communication style?",
+        "answers": [
+          { "answerID": 80, "answerText": "Text" },
+          { "answerID": 81, "answerText": "Phone Calls" },
+          { "answerID": 82, "answerText": "In-person Meetings" },
+          { "answerID": 83, "answerText": "Online Chats" }
+        ]
+      },
+      {
+        "questionID": 9,
+        "questionText": "Do you have any dietary restrictions or food allergies?",
+        "answers": [
+          { "answerID": 90, "answerText": "Vegetarian" },
+          { "answerID": 91, "answerText": "Vegan" },
+          { "answerID": 92, "answerText": "Gluten-Free" },
+          { "answerID": 93, "answerText": "Allergies (please specify): ____________" }
+        ]
+      },
+      {
+        "questionID": 10,
+        "questionText": "What qualities do you value most in a friend?",
+        "answers": [
+          { "answerID": 100, "answerText": "Trustworthiness" },
+          { "answerID": 101, "answerText": "Sense of Humor" },
+          { "answerID": 102, "answerText": "Empathy" },
+          { "answerID": 103, "answerText": "Similar Interests" }
+        ]
+      }
+  ]
+
+  

@@ -1,0 +1,518 @@
+.All {
+    display: flex;
+}
+body{
+    margin: 0px;
+    text-align: center;
+    color: #fff;
+    background-color:#efacac;
+}
+.section1{
+    height: 80vh;
+    display: flex;
+    margin: 5% 5% 0 5%;
+}
+.section1 .left{ 
+    width: 50%;
+    align-items: right;
+}
+.section1 .left img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    height: 50vh;
+    padding: 2%;
+}
+.section1 .right{
+    align-items: left;
+    width: 50%;
+}
+.content{
+    /* align-items: right; */
+    /* flex-direction: column; */
+    padding: 2%;
+    margin-left: 20px;
+}
+.All .Sect1 .GroupSavings{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.All .Sect1 .CreateAccount{
+    font-size: 25px;
+    font-weight: 400;
+}
+.All .Sect1 h1{
+    font-weight: 600;
+}
+.All .Sect1 .text-wrapper{
+    width: 100%;
+    margin-top: 15px;
+}
+.All .Sect1 .book{
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: rgb(105, 105, 105);
+}
+.Sect1{
+    padding-top: 50px;
+}
+.All .Sect1 .accounts .account{
+    margin-top: 50px;
+    padding-top: 10px;
+}
+
+/* .fileUpload:hover{
+   background-color: #61dafb;
+} */
+
+.Sect1 {
+    height: 100%;
+    width: 50%;
+    margin-top: 10px;
+}
+.Sect1 .LinkButton {
+    border: 1px solid #61dafb ;
+    width: 20%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #61dafb;
+    border-radius: 15px;
+    color: white;
+}
+.signUp2 Link{
+    color: #61dafb;
+    border: 1px solid black;
+
+}
+.accounts span{
+    font-size: 20px;
+}
+.accounts .Link{
+    font-size: 20px;
+}
+.Account {
+    color: #61dafb;
+}
+.Account >span{
+    color: #000;
+    margin-top:20px;
+}
+.Sect2 {
+    width: 50%;
+    height: 100svh;
+}
+.Sect2 img {
+    height: 100%;
+    width: 100%;
+}
+.Sect1 .logo{
+    height: auto;
+    /* width:500px; */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    top: 67px;
+    width: 200px;
+    margin-top: 20px;
+}
+.Sect1 .logo img {
+    height: 90%;
+    width: 90%;
+}
+.Sect1 .Link{
+    color:#61dafb;
+}
+
+.login{
+    height: 100vh;
+    /* margin: 10px; */
+    margin: 5% 5% 0 5%;
+}
+
+.login .top{
+    display: flex;
+    height: 70%;
+}
+.login .bottom{
+    height: 30%;
+}
+
+.bottom .P5,
+.bottom .P6{
+    font-size: 12px;
+    margin-top: 10px;
+    color: #aaa;
+}
+.Remember p.P5{
+    font-size: 12px;
+    color: #61dafb;
+    padding: 2px;
+    margin-left: 230px;
+    margin-top: 3px;
+}
+.Remember p.P4{
+    margin-right: 235px;
+    font-size: 12px;
+    padding: 2px;
+}
+.OR{
+    margin: 5px 5px;
+    font-weight: 500;
+
+}
+.login .top .img-sect{
+    width: 50%;
+}
+.login .top .img-sect img{
+    width: 100%;
+    height: 100%;
+}
+.login .top .form-sect{
+    width: 50%;
+    display: flex;
+}
+.VisibilityIcon{
+    position: absolute;
+    top: 60%;
+    right: 27%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-top: 0px;
+    color:#aaa; 
+}  
+.VisibilityIcon2{
+    position: absolute;
+    top: 80%;
+    right: 27%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-top: 5px;
+    color:#aaa; 
+}
+.PasswordVisibilityIcon {
+    position: absolute;
+    top: 70%;
+    right: 27%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-top: 5px;
+    color:#aaa;
+  }
+  .PasswordVisibilityIcon3{
+    position: absolute;
+    top: 46%;
+    right: 35%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-top: 5px;
+    color:#aaa;
+  } 
+  .PasswordVisibilityIcon4{
+    position: absolute;
+    top: 56%;
+    right: 35%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-top: 5px;
+    color:#aaa;
+  }
+  .PasswordVisibilityIcon5{
+    position: absolute;
+    top: 67%;
+    right: 35%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-top: 0px;
+    color:#aaa;
+  }   
+.PasswordContainer{
+    position: relative;
+}  
+
+.PasswordInputContainer {
+    position: relative;
+}
+.PasswordInputContainer2 {
+    position: relative;
+}
+.grouped select{
+    margin-left: 40%;
+}
+.grouped span{
+    margin-left: 40%;
+}
+.form-sect .Logo img{
+    margin-left: auto;
+}
+
+.login .top .form-sect>div{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    
+}
+.login .top .form-sect .Logo{
+    /* width: 50%; */
+    display: flex; 
+}
+.login .top .form-sect h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.login .top .form-sect input{
+   border: 1px solid #aaa; 
+   height: 35px;
+   border-radius: 5px;
+   padding-left: 5px;
+   margin-top: 30px;
+   width: 50%;
+   color: black;
+}
+.login .top .form-sect input:focus{
+    outline: 1px solid #61dafb;
+}
+.login .top .form-sect button{
+   height: 35px;
+   border-radius: 5px;
+   padding-left: 5px;
+   margin-top: 20px;
+   width: 50%;
+   background-color: #61dafb;
+   color: #fff;
+   font-weight: 600;
+}
+.logout{
+    display: flex;
+    margin-left: 500px;
+}
+
+.login .top .form-sect
+
+.login .top .form-sect .Logo img{
+    margin-left: auto;
+}
+
+.signUp{
+    height: 100vh;
+    display: flex;
+    margin: 5% 5% 0 5%;
+}
+.signUp-button{
+    background-color: #61dafb;
+    color:#fff;
+}
+.signUp .right-side{
+    align-items: right;
+    width: 50%;
+}
+.signUp .right-side .terms .agree{
+    margin-top: 20px;
+    padding-top: 0px;
+}
+.signUp .left-side{
+    width: 50%;
+}
+.signUp .image3{
+    width: 100%;
+    height: 80vh; 
+    padding: 2px;
+}
+.signUp .left-side .image3 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+.signUp .logo2 img{
+    display: flex;
+    margin-left: auto;
+    margin-top: 0%;
+    top: 0;
+    right: 0;
+}
+.form-sect .Logo1 img{
+    display: flex;
+    margin-left: auto;
+    margin-top: 0%;
+    top: 0;
+    right: 0;
+}
+.signUp .Sect4{
+    align-items: flex-end;
+    margin-top: -5%;
+}
+
+.signUp .right-side .Sect4>h1{
+    text-align: center; 
+    font-size: 41px;
+    font-weight: 600;  
+}
+.signUp .Sect4 .grouped select{
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items:end;
+    width: 100%;
+    /* margin: 0 auto; */
+    top: 0%;
+    right: 0; 
+    margin-top: 1%;  
+    color: #6b6969; 
+}
+.signUp .Sect4 .grouped{
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items:end;
+    width: 50%;
+    margin: 0 auto;
+    top: 0%;
+    right: 0; 
+    margin-top: 1%;   
+}
+
+.agree .Link{
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
+.terms >span{
+    margin-top: 15px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: #000;
+}
+.terms {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #61dafb;
+}
+.Sect4 .OR{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.Sect4 .Already {
+    color: #61dafb;
+}
+.Sect4 .Already span{
+    color:black;
+}
+.grouped>select{
+    border: 1px solid #aaa;
+    padding: 10px 10px 15px 3px;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #000;
+    background-color: white;
+}
+.grouped>input{
+    border: 1px solid #aaa;
+    padding: 5px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #000;
+    
+}
+.grouped>input:hover,
+.grouped>input:focus{
+    outline: 1px solid #61dafb;
+}
+.grouped>select:hover,
+.grouped>select:focus{
+    outline: 1px solid #61dafb;
+}
+
+.button>input{
+    border: 1px solid #61dafb;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #61dafb;
+    color:white;
+} 
+.button input{
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.google .div{
+    font-weight: 500;
+    text-align: center;
+    margin-left: 100px;
+    padding-left: 55px;
+}
+.message_Btn{
+    margin-left: 70%;
+    margin-top: 3%;
+}
+
+@media only screen and (max-width: 700px){
+    .login .top{
+        display: block;
+    }
+    .All{
+        flex-direction: column;
+        width: fit-content;
+    }
+    .Sect1 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+      }
+      .Sect2 {
+        order: -1; /* This will move Sect2 above Sect1 in the flex container */
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+}
+@media (max-width: 700px) {
+    .PasswordVisibilityIcon {
+        font-size: 16px;
+    }
+    .VisibilityIcon{
+        font-size: 16px;
+    }
+    .VisibilityIcon2{
+        font-size: 16px;
+    }
+    .login .top .img-sect{
+        width: 100%;
+        /* display: none; */
+    }
+    .login .top .form-sect{
+        width: 100%;
+        display: flex;
+    } 
+    .login .bottom {
+        font-style: italic;
+        margin-top: 70%;
+        line-height: 1.8;
+        font-weight: 600;
+        align-items: center;
+       
+    }
+    .signUp{
+        flex-direction: column;
+        display: flex;
+    }
+    .signUp .left-side {
+        width: 100%;
+        order: 2;
+    }
+    .signUp .right-side{
+        width: 100%;
+        order: 1;
+    }
+    
+
+  }
