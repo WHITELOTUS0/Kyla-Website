@@ -1,17 +1,82 @@
-exports.getMatchScore = () =>{
-    let scores = data.reduce((acc, cur) => {
-        // Check if the attempt matches the provided match data
-        let attemptMatches = cur.attempt.some(attempt => 
-            attempt.questionId === match.questionId && attempt.answerId === match.answerId
-        );
-    
-        if (attemptMatches) {
-            // If the userId already exists in the acc object, increment the score, otherwise set it to 1
-            acc[cur.userId] = acc[cur.userId] ? acc[cur.userId] + 1 : 1;
-        }
-        
-        return acc;
-    }, {});
 
-    return scores;
+exports.compareScores=(studentData, studentToCompare)=> {
+    let result = {};
+    for (let i = 0; i < studentData.length; i++) {
+        let student = studentData[i];
+        let score = calculateScore(student.attempt, studentToCompare.attempt);
+        result[student.userId] = score;
+    }
+    return result;
 }
+
+function calculateScore(attempts1, attempts2) {
+    let score = 0;
+    for (let i = 0; i < attempts1.length; i++) {
+        for (let j = 0; j < attempts2.length; j++) {
+            if (attempts1[i].questionId === attempts2[j].questionId &&
+                attempts1[i].answerId === attempts2[j].answerId) {
+                score++;
+                break;
+            }
+        }
+    }
+    return score;
+}
+
+let studentData = [
+    {
+        id: 2,
+        userId: 5,
+        attempt: [
+            {
+                questionId: 10,
+                answerId: 5
+            }
+        ]
+    },
+    {
+        id: 5,
+        userId: 5,
+        attempt: [
+            {
+                questionId: 10,
+                answerId: 105
+            }
+        ]
+    },
+    {
+        id: 11,
+        userId: 8,
+        attempt: [
+            {
+                questionId: 9,
+                answerId: 90
+            },
+            {
+                questionId: 2,
+                answerId: 20
+            }
+        ]
+    }
+];
+
+let studentToCompare = {
+    userId: 13,
+    attempt: [
+        {
+            questionId: 9,
+            answerId: 90
+        },
+        {
+            questionId: 10,
+            answerId: 105
+        },
+        {
+            questionId: 2,
+            answerId: 20
+        }
+    ]
+};
+
+// let comparisonResult = compareScores(studentData, studentToCompare);
+// console.log(comparisonResult);
