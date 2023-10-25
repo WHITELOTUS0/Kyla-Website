@@ -35,6 +35,7 @@ exports.testRoute = async(req,res)=>{
     return res.json({
         selected
     })
+    
   } catch (error) {
     console.log('error', error)
   }finally{
