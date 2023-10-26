@@ -5,6 +5,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // import logo2 from "../Images/logo2.jpg";
 import { axiosInstance } from "../http/http";
 import { errorNotification, notify } from "../Toasts/Toast";
+import music from "../assets/music.jpg"
 import "../css/index.css"
 
 const headers ={
@@ -57,7 +58,7 @@ const headers ={
     <div className="signUp">
       <div className="left-side">
         <div className="image3">
-          <img alt="" src=""/>
+          <img alt="" src={music}/>
         </div>
       </div>
       <div className="right-side">
