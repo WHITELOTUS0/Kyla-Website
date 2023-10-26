@@ -22,12 +22,12 @@ exports.storeQuiz = async (req,res) => {
             },
           });
           
-        //   if(user){
-        //     return res.status(201).json({
-        //         message: "Already Attempted A quiz",
-        //         success:false
-        //     })
-        //   }
+          if(user){
+            return res.status(201).json({
+                message: "Already Attempted A quiz",
+                success:false
+            })
+          }
         
         /****************** Store quiz *************** */
         const quizData = await prisma.quizAttempt.create({
