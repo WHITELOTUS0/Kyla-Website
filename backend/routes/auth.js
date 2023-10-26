@@ -6,7 +6,9 @@ const {
     login
 } = require('../controllers/auth')
 
-const {testRoute, testMail} = require('../controllers/test')
+
+const {testRoute, getUsersQuiz,testMail} = require('../controllers/test')
+
 
 const {
     storeQuiz,
@@ -19,6 +21,10 @@ router.post('/api/quiz', storeQuiz);
 router.get('/api/quiz', getAllQuizes)
 
 router.get('/mm',testRoute)
+
 router.get('/mail', testMail)
+
+router.get('/test/:id', getUsersQuiz)
+
 
 module.exports = router;

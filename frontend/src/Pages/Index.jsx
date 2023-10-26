@@ -1,6 +1,7 @@
 import React from 'react'
 import TopBar from './Design1/TopBar'
 import Footer from './Design1/Footer'
+import science from "../assets/image3.jpeg"
 
 function Index() {
   return (
@@ -8,7 +9,7 @@ function Index() {
         <TopBar/>
         <div className='section1'>
             <div className='left'>
-                <img src="" alt=''/>
+                <img src={science} alt=''/>
             </div>
             <div className='right'>
             <div className='content'>
