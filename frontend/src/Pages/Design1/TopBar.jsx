@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import LogoutIcon from '@mui/icons-material/Logout';
 import WavingHandIcon from '@mui/icons-material/WavingHand';
+import MenuIcon from '@mui/icons-material/Menu';
 import logo from "../../assets/aka_logo.png"
 import '../../App.css'
 
@@ -31,7 +32,7 @@ function TopBar() {
             <img src={logo} alt=''/>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
-          
+          <MenuIcon/>
         </div>
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
             <ul>
@@ -49,7 +50,7 @@ function TopBar() {
         </div>
        
         <div className='logOut' >
-        <LogoutIcon onClick={handleLogOut}/>
+        <LogoutIcon onClick={handleLogOut} sx={{color:'white'}}/>
         </div>
     </div>
     </nav>
