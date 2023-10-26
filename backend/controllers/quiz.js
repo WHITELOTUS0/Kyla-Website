@@ -1,4 +1,6 @@
 const {PrismaClient} = require('@prisma/client')
+const {finalCompare} = require('../utils/match.functions')
+const {sendEmail} = require('../utils/mailer')
 
 const prisma = new PrismaClient();
 
@@ -20,12 +22,12 @@ exports.storeQuiz = async (req,res) => {
             },
           });
           
-          if(user){
-            return res.status(201).json({
-                message: "Already Attempted A quiz",
-                success:false
-            })
-          }
+        //   if(user){
+        //     return res.status(201).json({
+        //         message: "Already Attempted A quiz",
+        //         success:false
+        //     })
+        //   }
         
         /****************** Store quiz *************** */
         const quizData = await prisma.quizAttempt.create({
@@ -40,10 +42,40 @@ exports.storeQuiz = async (req,res) => {
             where: { id: userId },
             data: { isQuizAttempted: true },
         })
+        /* Match User After Quiz Attempt */
+         const users = await prisma.user.findMany({
+                where: {
+                    id: parseInt(userId)
+                },
+                include: {
+                attempts: true
+                },
+            })
+        
+          let studentToCompare = {
+            userId: users[0].id,
+            attempt: users[0].attempts[0].attempt,
+            email: users[0].email
+          };
+          /* Query all Avaliabale quizes */
+          const allData = await prisma.quizAttempt.findMany({
+            where: {
+                userId: {
+                    not: parseInt(userId)
+                }
+            },
+          })
+          /* Compare */
+          const comparedResults = await finalCompare(allData,studentToCompare)
+          /* send mails*/
+          comparedResults.map(async(email)=>{
+             await sendEmail(email, "nn", "ll")
+          })
         /* Return success  */
         return res.status(201).json({
             message:"Quiz Attempt successFull",
-            success: true
+            success: true,
+            comparedResults
         })
     } catch (error) {
         console.log('error', error)
