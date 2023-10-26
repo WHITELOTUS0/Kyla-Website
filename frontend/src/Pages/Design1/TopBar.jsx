@@ -2,6 +2,7 @@
 import { NavLink} from 'react-router-dom'
 import { useState } from 'react'
 import LogoutIcon from '@mui/icons-material/Logout';
+import logo from "../../assets/aka_logo.png"
 import '../../App.css'
 
 function TopBar() {
@@ -16,7 +17,7 @@ function TopBar() {
     <nav className='navbar'>
     <div className='container'>
         <div className='logo'>
-            <img src='' alt='No image..'/>
+            <img src={logo} alt=''/>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
           
