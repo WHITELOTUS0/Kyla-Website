@@ -7,7 +7,7 @@ body {
   background-color: #fcfcfc;
 }
 .container {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 0px;
   display: flex;
@@ -19,9 +19,16 @@ body {
   display: none;
 }
 .navbar {
-  height: 60px;
-  background-color: #da70d6;
+  height: 75px;
+  background-color: #da70b7;
   position: relative;
+}
+.navbar .logo img{
+  width:100%;
+  height: auto;
+  max-width: 80px;
+  border-radius: 5px;
+  margin: 15px;
 }
 .nav-elements li a{
   text-decoration: none;
@@ -41,7 +48,7 @@ body {
   margin-right: 60px;
 }
 .nav-elements ul a.active {
-  color: #574c4c;
+  color: #d4cfcf;
   font-weight: 500;
   position: relative;
 }

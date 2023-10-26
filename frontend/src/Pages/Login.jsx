@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import Visibility from '@mui/icons-material/Visibility';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // import Dialog from "@mui/material/Dialog";
 // import DialogTitle from "@mui/material/DialogTitle";
@@ -10,6 +10,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "../css/index.css"
 import { axiosInstance } from "../http/http";
 import { errorNotification, notify } from "../Toasts/Toast";
+import playing from "../assets/playing.jpg"
 
 const headers ={
   "Content-Type":"application/json",
@@ -72,18 +73,19 @@ export default function Login() {
        console.log('error ', error )
     }
   }
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   return (
     <div className="login">
       <div className="top">
         <div className="img-sect">
-          <img alt="" src="" />
+          <img alt="" src={playing}/>
         </div>
 
         <div className="form-sect">
           <div>
             <div className="Logo1">
-              <img alt="" src="" />
+              <img alt="" src=""/>
             </div>
             <h1>Log in 
               {/* {JSON.stringify(input)} */}
@@ -107,9 +109,11 @@ export default function Login() {
                   onChange={handleInputChange}
                 />
                 <span
-                  className={`PasswordVisibilityIcon ${showPassword ? "visible" : ""}`}
+                  onClick={handleClickShowPassword}
+                  // className={`PasswordVisibilityIcon ${showPassword ? "visible" : ""}`}
+                  className="PasswordVisibilityIcon"
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPassword ? <VisibilityOff /> : <VisibilityIcon />}
                 </span>
               </div>
               <div>

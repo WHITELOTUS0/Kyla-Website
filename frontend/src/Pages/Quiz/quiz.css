@@ -16,11 +16,13 @@ body {
 }
 
 .quizBody {
-	background-color: #efacac;
+	/* background-color:rgb(234, 236, 227); */
+	background-color: #f7c5e6;
 	/* display: flex; */
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+	color: #ffffff;
 }
 .appBody{
 	display: flex;
@@ -32,8 +34,8 @@ body {
 
 .app {
 	background-color: #252d4a;
-	width: 450px;
-	min-height: 200px;
+	width: 500px;
+	min-height: 230px;
 	height: min-content;
 	border-radius: 15px;
 	padding: 20px;

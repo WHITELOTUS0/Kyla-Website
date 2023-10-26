@@ -63,7 +63,7 @@ const headers ={
       </div>
       <div className="right-side">
         <div className="logo2">
-          <img alt="Logo_image" src=""/>
+          <img alt="" src=""/>
         </div>
         <div className="Sect4">
           <h1>Create Account  </h1>

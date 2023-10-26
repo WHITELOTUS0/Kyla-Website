@@ -4,28 +4,44 @@
 body{
     margin: 0px;
     text-align: center;
-    color: #fff;
-    background-color:#efacac;
+    color: #000;
+    background-color:rgb(234, 236, 227);
+    /* background-color: #f7c5e6; */
 }
 .section1{
     height: 80vh;
     display: flex;
-    margin: 5% 5% 0 5%;
+    margin: 2% 2% 2% 2%;
 }
 .section1 .left{ 
     width: 50%;
     align-items: right;
 }
+.section1 .leftside{
+    width:50%;
+    align-items: right;
+}
 .section1 .left img{
     width: 100%;
     height: 100%;
-    border-radius: 3px;
-    height: 50vh;
-    padding: 2%;
+    border-radius: 15px;
+    height: 80vh;
+    padding: 1%;
+}
+.section1 .leftside img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    height: 80vh;
+    padding: 1%;
 }
 .section1 .right{
     align-items: left;
     width: 50%;
+}
+.section1 .rightside{
+    align-items: left;
+    width: 60%;
 }
 .content{
     /* align-items: right; */
@@ -317,7 +333,7 @@ body{
 .signUp .image3{
     width: 100%;
     height: 80vh; 
-    padding: 2px;
+    padding: 1px;
 }
 .signUp .left-side .image3 img{
     width: 100%;
