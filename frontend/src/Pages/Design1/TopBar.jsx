@@ -2,7 +2,7 @@
 import { NavLink} from 'react-router-dom'
 import { useState } from 'react'
 import LogoutIcon from '@mui/icons-material/Logout';
-import logo from "../../assets/logo.jpg"
+import logo from "../../assets/aka_logo.png"
 import '../../App.css'
 
 function TopBar() {

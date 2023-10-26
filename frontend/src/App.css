@@ -21,20 +21,24 @@ body {
 .navbar {
   height: 75px;
   background-color: #da70b7;
+  /* background-color: white; */
   position: relative;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 .navbar .logo img{
   width:100%;
   height: auto;
-  max-width: 80px;
+  max-width: 100px;
   border-radius: 5px;
-  margin: 15px;
+  margin: 10px;
+  padding: 10px;
 }
 .nav-elements li a{
   text-decoration: none;
 }
 .nav-elements ul a {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   color: #2f234f;
   text-decoration: none;
