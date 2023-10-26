@@ -3,5 +3,9 @@
     background-color: rgb(190, 195, 195, 1);
     padding: 35px;
     margin-top: calc(100vh-85px);
+    justify-content: space-between;
     /* margin-top: 20vh; */
+}
+.footer span{
+    margin: 10px;
 }
