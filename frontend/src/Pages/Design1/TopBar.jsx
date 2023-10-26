@@ -1,7 +1,9 @@
 
 import { NavLink} from 'react-router-dom'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import LogoutIcon from '@mui/icons-material/Logout';
+import WavingHandIcon from '@mui/icons-material/WavingHand';
 import logo from "../../assets/aka_logo.png"
 import '../../App.css'
 
@@ -12,6 +14,15 @@ function TopBar() {
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar)
   }
+  
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    localStorage.removeItem('username');
+    navigate('/login');
+    window.location.reload();
+  };
+   
+  const user = JSON.parse(localStorage.getItem('user'))
 
   return (
     <nav className='navbar'>
@@ -27,12 +38,18 @@ function TopBar() {
                 <li><NavLink to='/index'>Home</NavLink></li>
                 <li><NavLink to='/about'>About</NavLink></li>
                 <li><NavLink to='/quiz'>Student Match Quiz</NavLink></li>
-                {/* <li><NavLink to='/register'>Register</NavLink></li>
-                <li><NavLink to='/login'>Log in</NavLink></li> */}
+                <li><button><NavLink to='/'>Register</NavLink></button></li>
+                <li><button><NavLink to='/login'>Log in</NavLink></button></li>
+                
             </ul>
         </div>
-        <div className='logOut'>
-        <LogoutIcon/>
+        <div className='user'>
+        {/* <span><WavingHandIcon/></span> */}
+        {/* <h4>Hello <i>{user.firstName}</i></h4> */}
+        </div>
+       
+        <div className='logOut' >
+        <LogoutIcon onClick={handleLogOut}/>
         </div>
     </div>
     </nav>

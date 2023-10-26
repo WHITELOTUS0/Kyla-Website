@@ -1,7 +1,7 @@
 import React from 'react'
 import TopBar from './Design1/TopBar'
 import Footer from './Design1/Footer'
-import gamer from "../assets/gamer.jpg"
+import gamer from "../assets/image4.jpeg"
 
 function About() {
   return (

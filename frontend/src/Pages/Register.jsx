@@ -5,7 +5,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // import logo2 from "../Images/logo2.jpg";
 import { axiosInstance } from "../http/http";
 import { errorNotification, notify } from "../Toasts/Toast";
-import music from "../assets/music.jpg"
+import music from "../assets/image1.jpeg"
 import "../css/index.css"
 
 const headers ={

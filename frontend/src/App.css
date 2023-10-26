@@ -26,6 +26,17 @@ body {
   padding-top: 15px;
   padding-bottom: 10px;
 }
+.navbar .user{
+  display: flex;
+  margin-right: -100px;
+}
+.navbar .user h4{
+  margin-left: 10px;
+
+}
+.navbar .user span{
+  margin-top: 15%;
+}
 .navbar .logo img{
   width:100%;
   height: auto;
@@ -42,6 +53,9 @@ body {
   font-weight: 400;
   color: #2f234f;
   text-decoration: none;
+}
+.nav-elements ul li button{
+  background-color: #fcfcfc;
 }
 .nav-elements ul {
   display: flex;

@@ -1,7 +1,7 @@
 import React from 'react'
 import TopBar from './Design1/TopBar'
 import Footer from './Design1/Footer'
-import science from "../assets/science.jpg"
+import science from "../assets/image3.jpeg"
 
 function Index() {
   return (

@@ -14,17 +14,17 @@ body{
     margin: 2% 2% 2% 2%;
 }
 .section1 .left{ 
-    width: 50%;
+    width: 65%;
     align-items: right;
 }
 .section1 .leftside{
-    width:50%;
+    width:65%;
     align-items: right;
 }
 .section1 .left img{
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
     height: 80vh;
     padding: 1%;
 }
@@ -178,7 +178,7 @@ body{
 
 }
 .login .top .img-sect{
-    width: 50%;
+    width: 65%;
 }
 .login .top .img-sect img{
     width: 100%;
@@ -328,12 +328,14 @@ body{
     padding-top: 0px;
 }
 .signUp .left-side{
-    width: 50%;
+    width: 65%;
+    margin-right: 55px;
 }
 .signUp .image3{
     width: 100%;
-    height: 80vh; 
+    height: 85vh; 
     padding: 1px;
+    object-fit: contain;
 }
 .signUp .left-side .image3 img{
     width: 100%;

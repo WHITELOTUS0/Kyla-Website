@@ -10,7 +10,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "../css/index.css"
 import { axiosInstance } from "../http/http";
 import { errorNotification, notify } from "../Toasts/Toast";
-import playing from "../assets/playing.jpg"
+import playing from "../assets/image2.jpg"
 
 const headers ={
   "Content-Type":"application/json",
