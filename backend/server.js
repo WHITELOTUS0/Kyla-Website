@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 const router = require('./routes/auth')
 
+
 const app = express();
 const PORT = process.env.PORT || 5000
 
@@ -23,6 +24,7 @@ app.use(function (err, req, res, next) {
 });
 
 app.use('/v1', router);
+
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);

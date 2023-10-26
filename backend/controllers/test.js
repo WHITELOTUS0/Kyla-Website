@@ -1,6 +1,7 @@
 const {PrismaClient} = require('@prisma/client')
 const prisma = new PrismaClient();
 const {compareScores} = require('../utils/matchUser')
+const {sendEmail} = require('../utils/mailer')
 
 exports.testRoute = async(req,res)=>{
   try {
@@ -40,5 +41,16 @@ exports.testRoute = async(req,res)=>{
     console.log('error', error)
   }finally{
      prisma.$disconnect();
+  }
+}
+
+exports.testMail = async(req,res)=>{
+  try {
+    const m = await sendEmail("benjaminjjumba@gmail.com", "Jjumba","Hello World")
+    res.json({
+      m
+    })
+  } catch (error) {
+    console.log('error', error)
   }
 }
