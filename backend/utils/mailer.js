@@ -3,11 +3,11 @@ const nodemailer=require('nodemailer');
 const Mailgen=require('mailgen');
 
 
-exports.sendEmail = async(to, name, message)=>{
+exports.sendEmail = async(to,name, user)=>{
     try {
         const transporter = nodemailer.createTransport({
-            host: 'smtp.mailtrap.io',
-            port: 2525,
+            host: 'smtp.gmail.com',
+            // port: 2525,
             auth: {
                 user: process.env.EMAIL_USER, 
                 pass: process.env.EMAIL_PASSWORD, 
@@ -26,8 +26,8 @@ exports.sendEmail = async(to, name, message)=>{
         const email = {
             body : {
                 name: name,
-                intro : message || 'Thank you for using the friend finder website! We\'re very excited to have you on board.',
-                outro: 'Here are the friend details, Meet up and see where to go, we\'re very excited to help you find friends.'
+                intro : 'Thank you for using the friend finder website! We\'re very excited to have you on board.',
+                outro: `Here are the friend details, ${user.firstName} ${user.lastName}, ${user.email} ${user.grade}, Meet up and see where to go, we\'re very excited to help you find friends.`
             }
         }
         const emailBody = MailGenerator.generate(email);
@@ -35,7 +35,7 @@ exports.sendEmail = async(to, name, message)=>{
         const mailOptions = {
             from: process.env.EMAIL,
             to: to,
-            subject: 'Test Email',
+            subject: 'Found you a Friend',
             html: emailBody
         };
         transporter.sendMail(mailOptions, (error, info) => {

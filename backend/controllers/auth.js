@@ -51,7 +51,7 @@ exports.register = async(req,res) => {
 
     } catch (error) {
         console.log('error', error)
-        return res.json({
+        return res.status(500).json({
             error: error
         })
     } finally{

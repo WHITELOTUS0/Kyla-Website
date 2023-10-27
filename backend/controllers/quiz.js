@@ -67,9 +67,28 @@ exports.storeQuiz = async (req,res) => {
           })
           /* Compare */
           const comparedResults = await finalCompare(allData,studentToCompare)
+
+
+          const userInfoPromises = comparedResults.map((email) => {
+            return prisma.user.findFirst({
+              where: {
+                email: email
+              }
+            });
+          });
+          
+          const userInfo = await Promise.all(userInfoPromises);
+          
           /* send mails*/
-          comparedResults.map(async(email)=>{
-             await sendEmail(email, "nn", "ll")
+          userInfo.map(async(user, index)=>{
+            if(index == 0){
+              console.log('user 1'+ user.email +" ", userInfo[1])
+              await sendEmail(user.email,user.firstName, userInfo[1])
+            }else{
+              console.log('user 2' + user.email + "", userInfo[0])
+              await sendEmail(user.email,user.firstName, userInfo[0])
+            }
+           
           })
         /* Return success  */
         return res.status(201).json({
