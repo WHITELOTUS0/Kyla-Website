@@ -27,7 +27,7 @@ exports.sendEmail = async(to,name, user)=>{
             body : {
                 name: name,
                 intro : 'Thank you for using GRADE MIX N\'MATCH:AKAMOM! We\'re very excited to have you on board.',
-                outro: `Here are the friend details, ${user.firstName} ${user.lastName}, ${user.email} ${user.grade}, Meet up and see where to take your friendship, we\'re very excited to help you find friends.`
+                outro: `Here are the friend details,<br/>${user.firstName}<br/>${user.lastName}<br/>${user.email}<br/>${user.grade}<br/>Meet up and see where to take your friendship, we\'re very excited to help you find friends.`
             }
         }
         const emailBody = MailGenerator.generate(email);
