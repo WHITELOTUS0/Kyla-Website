@@ -17,6 +17,8 @@ const headers ={
     const navigate = useNavigate();
     const axiosCall = axiosInstance(headers);
     const [showPassword, setShowPassword] = useState(false);
+    const [isEmailValid, setIsEmailValid] = useState(true);
+
 
     const [formData, setFormData] = useState({
         email: "",
@@ -26,16 +28,29 @@ const headers ={
         lastName:""
     });
 
+    const validateEmail = (email) => {
+      const regex = /^[^\s@]+@akamom\.org$/i;
+      return regex.test(email);
+    };
+    
+
     const handleInputChange = (e) => {
       const { name, value } = e.target;
-      console.log('value', value)
+      if (name === 'email') {
+        setIsEmailValid(validateEmail(value));
+      }
       setFormData((prevFormData) => ({
         ...prevFormData,
         [name]: value,
       }));
     };
+    
 
     const handleSubmit = async() =>{
+      if (!isEmailValid) {
+        errorNotification("Please enter a valid '@akamom.org' email address");
+        return;
+      }
       try {
          const response = await axiosCall.post('register',formData)
          console.log('response', response)
@@ -87,14 +102,18 @@ const headers ={
               />
             </div>
             <div className="grouped">
-              <input
-                type="email"
-                placeholder="Email Address"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-              />
-            </div>
+  <input
+    type="email"
+    placeholder="Email Address"
+    name="email"
+    value={formData.email}
+    onChange={handleInputChange}
+  />
+  {!isEmailValid && (
+    <div className="error-message">Please enter a valid '@akamom.org' email address</div>
+  )}
+</div>
+
             <div className="PasswordInputContainer2">
             <div className="grouped">
               <input 
