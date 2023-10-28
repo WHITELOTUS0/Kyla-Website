@@ -18,16 +18,16 @@ exports.sendEmail = async(to,name, user)=>{
        const MailGenerator = new Mailgen({
             theme: "default",
             product : {
-                name: "Test Email",
-                link: 'https://mailgen.js/'
+                name: "GRADE MIX N'MATCH:AKAMOM",
+                link: 'https://kyla-website-nine.vercel.app/'
             }
         })
         /*  send mails */
         const email = {
             body : {
                 name: name,
-                intro : 'Thank you for using the friend finder website! We\'re very excited to have you on board.',
-                outro: `Here are the friend details, ${user.firstName} ${user.lastName}, ${user.email} ${user.grade}, Meet up and see where to go, we\'re very excited to help you find friends.`
+                intro : 'Thank you for using GRADE MIX N\'MATCH:AKAMOM! We\'re very excited to have you on board.',
+                outro: `Here are the friend details, ${user.firstName} ${user.lastName}, ${user.email} ${user.grade}, Meet up and see where to take your friendship, we\'re very excited to help you find friends.`
             }
         }
         const emailBody = MailGenerator.generate(email);
@@ -35,7 +35,7 @@ exports.sendEmail = async(to,name, user)=>{
         const mailOptions = {
             from: process.env.EMAIL,
             to: to,
-            subject: 'Found you a Friend',
+            subject: 'Found You a Friend',
             html: emailBody
         };
         transporter.sendMail(mailOptions, (error, info) => {
