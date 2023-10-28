@@ -9,13 +9,13 @@ function Footer() {
   return (
     <footer>
       <div className='footer'>
-        <a href="tel:your-phone-number" className='icon-large'>
+        <a href="tel:your-phone-number" className='icon-large' target="_blank">
           <PhoneRoundedIcon />
         </a>
-        <a href="mailto:your-email@example.com">
+        <a href="mailto:your-email@example.com" target="_blank">
           <EmailIcon />
         </a>
-        <a href="https://www.instagram.com/your-instagram-profile">
+        <a href="https://www.instagram.com/your-instagram-profile" target="_blank">
           <InstagramIcon />
         </a>
         <span>
