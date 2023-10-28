@@ -6,6 +6,7 @@ import Footer from "../Design1/Footer"
 import { errorNotification, notify } from '../../Toasts/Toast'
 import { axiosInstance } from '../../http/http'
 
+
 const headers = {
   "Content-Type": "application/json",
   // Authorization: `Bearer ${token}`
@@ -76,7 +77,7 @@ export default function Quiz() {
                 </div>
               </div>
               <div className="answer-section">
-                {JSON.stringify(finalAttempt)}
+                {/* {JSON.stringify(finalAttempt)} */}
                 {questions[currentIndex].answers.map((answer) => {
                   // Add onClick listener to this button
                   return (
