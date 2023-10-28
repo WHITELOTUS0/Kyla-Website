@@ -16,7 +16,7 @@ exports.sendEmail = async(to,name, user)=>{
         // generate email body using Mailgen
         console.log(process.env.EMAIL_USER)
        const MailGenerator = new Mailgen({
-            theme: "default",
+            theme: "cerberus",
             product : {
                 name: "GRADE MIX N'MATCH:AKAMOM",
                 link: 'https://kyla-website-nine.vercel.app/'
