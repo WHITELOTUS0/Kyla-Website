@@ -1,15 +1,15 @@
-import React from 'react';
-import PhoneRoundedIcon from '@mui/icons-material/PhoneRounded';
-import EmailIcon from '@mui/icons-material/Email';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import CopyrightIcon from '@mui/icons-material/Copyright';
-import '../../css/footer.css';
+import React from "react";
+import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
+import EmailIcon from "@mui/icons-material/Email";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import CopyrightIcon from "@mui/icons-material/Copyright";
+import "../../css/footer.css";
 
 function Footer() {
   return (
     <footer>
-      <div className='footer'>
-        <a href="+256 774 221442" className='icon-large' target="_blank">
+      <div className="footer">
+        <a href="+256 774 221442" className="icon-large" target="_blank">
           <PhoneRoundedIcon />
         </a>
         <span> </span>
@@ -22,7 +22,8 @@ function Footer() {
         </a>
         <span></span>
         <span>
-          <CopyrightIcon />Kyla Busingye 2023
+          <CopyrightIcon />
+          GRADE MIX'N MATCH 2023
         </span>
       </div>
     </footer>
