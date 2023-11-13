@@ -38,8 +38,8 @@ function TopBar() {
                 <li><NavLink to='/index'>Home</NavLink></li>
                 <li><NavLink to='/about'>About</NavLink></li>
                 <li><NavLink to='/quiz'>Student Match Quiz</NavLink></li>
-                <li><button><NavLink to='/'>Register</NavLink></button></li>
-                <li><button><NavLink to='/login'>Log in</NavLink></button></li>
+                {/*<li><button><NavLink to='/'>Register</NavLink></button></li> 
+                <li><button><NavLink to='/login'>Log in</NavLink></button></li>*/}
                 
             </ul>
         </div>

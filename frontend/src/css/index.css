@@ -5,7 +5,7 @@ body{
     margin: 0px;
     text-align: center;
     color: #000;
-    background-color:rgb(234, 236, 227);
+    background-color:rgb(255, 192, 203);
     /* background-color: white; */
 }
 .section1{
@@ -533,4 +533,9 @@ body{
     }
     
 
+  }
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
   }

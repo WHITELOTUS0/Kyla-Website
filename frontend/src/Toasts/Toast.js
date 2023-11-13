@@ -26,7 +26,7 @@ export const errorNotification = async (message) => {
       pauseOnHover: false,
       draggable: false,
       progress: undefined,
-      theme: "dark",
+      theme: "light",
      
     });
   };

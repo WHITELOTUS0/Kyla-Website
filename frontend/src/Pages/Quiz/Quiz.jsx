@@ -5,6 +5,7 @@ import TopBar from '../Design1/TopBar'
 import Footer from "../Design1/Footer"
 import { errorNotification, notify } from '../../Toasts/Toast'
 import { axiosInstance } from '../../http/http'
+import { useNavigate } from 'react-router-dom';
 
 const headers = {
   "Content-Type": "application/json",
@@ -12,6 +13,7 @@ const headers = {
 }
 
 export default function Quiz() {
+  const navigate = useNavigate();
   /* Pull User Id from Local Storage */
   const loggedInUser = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
 
@@ -31,6 +33,7 @@ export default function Quiz() {
 
       console.log('response', response)
       notify(response.data.message)
+      navigate('/index');
     } catch (error) {
       console.log('error', error)
       errorNotification("Something Went Wrong")
@@ -76,7 +79,7 @@ export default function Quiz() {
                 </div>
               </div>
               <div className="answer-section">
-                {JSON.stringify(finalAttempt)}
+                {/* {JSON.stringify(finalAttempt)} */}
                 {questions[currentIndex].answers.map((answer) => {
                   // Add onClick listener to this button
                   return (
