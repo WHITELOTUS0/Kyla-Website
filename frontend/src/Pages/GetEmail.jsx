@@ -26,7 +26,7 @@ export default function GetEmail() {
 
   const handleSubmit = async() =>{
     try {
-       const response = await axiosCall.post('forgot-password',formData)
+       const response = await axiosCall.post('reset',formData)
        console.log('response', response.data)
 
        if(response.data.success){
@@ -63,6 +63,7 @@ export default function GetEmail() {
                   placeholder="Email Address"
                   name="email"
                   onChange={handleInputChange}
+                  required
                 />
               </div>
               <div>
