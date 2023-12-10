@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "../css/index.css"
@@ -15,9 +15,12 @@ const headers ={
 export default function ChangePassword() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const {reset_token } = useParams();
+  console.log('reset_token', reset_token)
   const [formData, setFormData] = useState({
       oldPassword: "",
       newPassword: "",
+      email:"benjaminjjumba@gmail.com"
   });
   const axiosCall = axiosInstance(headers);
 
@@ -31,7 +34,10 @@ export default function ChangePassword() {
 
   const handleSubmit = async() =>{
     try {
-       const response = await axiosCall.post('change-password',formData)
+       const response = await axiosCall.post('update-password',{
+          reset_token,
+          password:formData.newPassword
+      })
        console.log('response', response.data)
 
        if(response.data.success){

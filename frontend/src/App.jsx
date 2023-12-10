@@ -22,7 +22,7 @@ function App() {
         <Route path="index" element={<Index />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/about" element={<About />} />
-        <Route path="/changepassword" element={<ChangePassword/>}/>
+        <Route path="/reset/:reset_token" element={<ChangePassword/>}/>
         </Route>
       </Routes>
     </>
