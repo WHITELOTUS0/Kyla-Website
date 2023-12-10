@@ -1,7 +1,9 @@
 const {PrismaClient} = require('@prisma/client')
 const bcrypt = require('bcryptjs')
 const { hashPassword } = require('../utils/hash')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { resetEmail } = require('../utils/resetMail');
+const randToken = require('rand-token')
 
 /***************************************AUTH CONTROLLER********************************************************/
 const prisma = new PrismaClient();
@@ -104,5 +106,124 @@ exports.login = async(req,res) => {
         console.log(error)
     } finally {
       prisma.$disconnect();
+    }
+}
+
+/*****************************************CHANGE PASSWORD*********************************************/
+
+
+exports.generatePasswordToken = async(req,res)=>{
+    try {
+        const {email} = req.body;
+        if(!email) {
+            return res.status(201).json({
+                success: false,
+                message: "This Field Cannot be empty"
+          })
+        }
+
+        /* Check whether user exists */
+        const existingUser = await prisma.user.findUnique({
+            where: {
+              email: email
+            }
+         });
+        /* If user Exists, send a password */
+         if(existingUser){
+            const token = randToken.generate(10);
+           /* Store reset token */
+            const resetToken = await prisma.user.update({
+                where: {
+                    email: email
+                },
+                data: {
+                    reset_token: token
+                }
+             });
+            /* Send Mail */
+            const response = await resetEmail(email,token);
+            console.log('token', token)
+
+            return res.status(201).json({
+                message: "Reset Token Sent to your email",
+                succes:true
+            })
+         }
+        /********************EMAIL NOT SENT*************************** */
+        return res.status(201).json({
+            success:false,
+            message: "Email Does not exist"
+        })
+
+    } catch (error) {
+        console.log(error)
+        res.status(404).json({
+            error:error
+        })
+    } finally{
+       prisma.$disconnect();
+    }
+}
+
+
+exports.updatePassword = async(req,res)=>{
+    try {
+        const {reset_token, email, password} = req.body;
+
+        if(!email || !reset_token || !password) {
+            return res.status(201).json({
+                success: false,
+                message: "Missing Parameters"
+          })
+        }
+
+        const user = await prisma.user.findUnique({
+            where: {
+                email: email,
+                reset_token: reset_token
+            }
+          });
+
+        if(!user){
+            return res.status(201).json({
+                success: false,
+                message: "Token expired"
+            })
+        }
+
+        const new_password = await hashPassword(password)
+
+        /* Update password */
+        const updatedUser = await prisma.user.update({
+            where: {
+                email: email
+            },
+            data: {
+                password: new_password
+            }
+        });
+        /* Clear token */
+        const clearToken = await prisma.user.update({
+            where: {
+               email: email
+            },
+            data: {
+               reset_token: null
+            }
+        });
+
+        res.status(201).json({
+            success:true,
+            message:"Password updated Successfully"
+        })
+
+    } catch (error) {
+        console.log(error)
+        res.status(404).json({
+            error:error
+        })
+    }finally{
+      
+        prisma.$disconnect();
     }
 }

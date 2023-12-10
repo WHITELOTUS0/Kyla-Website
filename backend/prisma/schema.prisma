@@ -20,6 +20,7 @@ model User {
     grade     String   @db.VarChar(10)
     isQuizAttempted Boolean @default(false)
     attempts  QuizAttempt[]
+    reset_token String? @default("")
 }
 
 model QuizAttempt {

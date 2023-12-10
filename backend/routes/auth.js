@@ -1,9 +1,12 @@
 const express = require('express')
+
 const router = express.Router()
 const { authorizeRequest } = require('../middleware/middleware')
 const { 
     register,
-    login
+    login,
+    generatePasswordToken,
+    updatePassword
 } = require('../controllers/auth')
 
 
@@ -18,7 +21,9 @@ const {
 router.post('/api/register', register);
 router.post('/api/login', login)
 router.post('/api/quiz', storeQuiz);
-router.get('/api/quiz', getAllQuizes)
+router.get('/api/quiz', getAllQuizes);
+router.post('/api/reset',generatePasswordToken);
+router.post('/api/update-password',updatePassword);
 
 router.get('/mm',testRoute)
 
