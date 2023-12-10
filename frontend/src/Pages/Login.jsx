@@ -21,7 +21,9 @@ export default function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [forgotPasswordOpen, setForgotPasswordOpen] = useState(false);
-  const handleForgotPasswordOpen = () => setForgotPasswordOpen(true);
+  const handleForgotPasswordOpen = () => {
+    navigate('/get-email');
+  };
   const handleForgotPasswordClose = () => setForgotPasswordOpen(false);
   const [formData, setFormData] = useState({
       email: "",
@@ -74,6 +76,7 @@ export default function Login() {
     }
   }
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+  
 
   return (
     <div className="login">

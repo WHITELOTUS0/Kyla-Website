@@ -9,6 +9,7 @@ import About from './Pages/About'
 import ProtectedRoutes from './navigation/ProtectedRoutes'
 import Index from './Pages/Index';
 import ChangePassword from './Pages/ChangePassword';
+import GetEmail from './Pages/GetEmail';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +24,7 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/about" element={<About />} />
         <Route path="/reset/:reset_token" element={<ChangePassword/>}/>
+        <Route path="/get-email" element={<GetEmail />} />
         </Route>
       </Routes>
     </>
