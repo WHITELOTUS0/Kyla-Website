@@ -168,9 +168,9 @@ exports.generatePasswordToken = async(req,res)=>{
 
 exports.updatePassword = async(req,res)=>{
     try {
-        const {reset_token, email, password} = req.body;
+        const {reset_token,  password} = req.body;
 
-        if(!email || !reset_token || !password) {
+        if(!reset_token || !password) {
             return res.status(201).json({
                 success: false,
                 message: "Missing Parameters"
@@ -179,7 +179,6 @@ exports.updatePassword = async(req,res)=>{
 
         const user = await prisma.user.findUnique({
             where: {
-                email: email,
                 reset_token: reset_token
             }
           });
