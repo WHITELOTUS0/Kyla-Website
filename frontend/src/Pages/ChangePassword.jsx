@@ -5,7 +5,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "../css/index.css"
 import { axiosInstance } from "../http/http";
 import { errorNotification, notify } from "../Toasts/Toast";
-import playing from "../assets/agakhanmom1.jpg"
+import playing from "../assets/reset-password.png"
 
 const headers ={
   "Content-Type":"application/json",
