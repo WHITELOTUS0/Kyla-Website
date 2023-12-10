@@ -177,7 +177,7 @@ exports.updatePassword = async(req,res)=>{
           })
         }
 
-        const user = await prisma.user.findUnique({
+        const user = await prisma.user.findFirst({
             where: {
                 reset_token: reset_token
             }

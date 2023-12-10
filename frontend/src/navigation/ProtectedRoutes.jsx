@@ -8,7 +8,7 @@ const ProtectedRoutes = () => {
     if(!isAuthenticated){
         errorNotification("Un Authenticated, Please Login !!")
     }else{
-        notify("Welcome Back")
+        // notify("Welcome Back")
     }
    
 
