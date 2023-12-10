@@ -8,6 +8,7 @@ import TopBar from './Pages/Design1/TopBar'
 import About from './Pages/About'
 import ProtectedRoutes from './navigation/ProtectedRoutes'
 import Index from './Pages/Index';
+import ChangePassword from './Pages/ChangePassword';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
         <Route path="index" element={<Index />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/about" element={<About />} />
+        <Route path="/reset/:reset_token" element={<ChangePassword/>}/>
         </Route>
       </Routes>
     </>
