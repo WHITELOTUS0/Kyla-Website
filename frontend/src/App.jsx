@@ -20,12 +20,12 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Register />} />
         <Route element={<ProtectedRoutes />}>
-        <Route path="index" element={<Index />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/about" element={<About />} />
+          <Route path="index" element={<Index />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/about" element={<About />} />
+        </Route>
         <Route path="/reset/:reset_token" element={<ChangePassword/>}/>
         <Route path="/get-email" element={<GetEmail />} />
-        </Route>
       </Routes>
     </>
   )
