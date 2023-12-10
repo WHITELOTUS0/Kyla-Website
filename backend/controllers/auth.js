@@ -195,7 +195,7 @@ exports.updatePassword = async(req,res)=>{
         /* Update password */
         const updatedUser = await prisma.user.update({
             where: {
-                email: email
+                email:user.email
             },
             data: {
                 password: new_password
@@ -203,11 +203,11 @@ exports.updatePassword = async(req,res)=>{
         });
         /* Clear token */
         const clearToken = await prisma.user.update({
-            where: {
-               email: email
+            where:  {
+               email:user.email
             },
-            data: {
-               reset_token: null
+            data:{
+                reset_token:null
             }
         });
 
