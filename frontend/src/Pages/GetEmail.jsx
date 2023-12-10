@@ -29,7 +29,7 @@ export default function GetEmail() {
        const response = await axiosCall.post('reset',formData)
        console.log('response', response.data)
 
-       if(response.data.success){
+       if(response.data.succes){
           /* Email sent successfully */
           await notify("Email sent successfully")
           navigate("/")
