@@ -20,7 +20,6 @@ export default function ChangePassword() {
   const [formData, setFormData] = useState({
       oldPassword: "",
       newPassword: "",
-      email:"benjaminjjumba@gmail.com"
   });
   const axiosCall = axiosInstance(headers);
 
@@ -69,13 +68,7 @@ export default function ChangePassword() {
             <h1>Change Password</h1>
             <form>
               <div className="Log">
-                <input
-                  type="password"
-                  value={formData.oldPassword}
-                  placeholder="Old Password"
-                  name="oldPassword"
-                  onChange={handleInputChange}
-                />
+                
               </div>
               <div className="PasswordInputContainer">
                 <input
