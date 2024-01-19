@@ -99,5 +99,4 @@ export default function Quiz() {
         <Footer/>
       </div>
     </div>
-  )
-}
+  )}
